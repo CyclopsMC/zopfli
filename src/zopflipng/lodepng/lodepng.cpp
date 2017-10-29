@@ -3749,7 +3749,7 @@ unsigned lodepng_auto_choose_color(LodePNGColorMode* mode_out,
   if(error) return error;
   mode_out->key_defined = 0;
 
-  if(prof.key && w * h <= 16)
+  if(prof.key /*&& w * h <= 16*/)
   {
     prof.alpha = 1; /*too few pixels to justify tRNS chunk overhead*/
     if(prof.bits < 8) prof.bits = 8; /*PNG has no alphachannel modes with less than 8-bit per channel*/

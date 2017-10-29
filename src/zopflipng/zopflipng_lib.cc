@@ -237,7 +237,7 @@ unsigned TryOptimize(
       lodepng_color_profile_init(&profile);
       lodepng_get_color_profile(&profile, &image[0], w, h, &state.info_raw);
       // Too small for tRNS chunk overhead.
-      if (w * h <= 16 && profile.key) profile.alpha = 1;
+      if (/*w * h <= 16 &&*/ profile.key) profile.alpha = 1;
       state.encoder.auto_convert = 0;
       state.info_png.color.colortype = (profile.alpha ? LCT_RGBA : LCT_RGB);
       state.info_png.color.bitdepth = 8;
